@@ -12,10 +12,14 @@ app.get('/login', (req, res, next) => {
 
 app.post('/login', (req, res, next) => {
   if (req.body.username === 'u' && req.body.password === 'p') {
-    res.send('Successful Login');
+    res.redirect('/welcome');
   } else {
-    res.send('Try again');
+    res.redirect('/login');
   }
+});
+
+app.get('/welcome', (req, res, next) => {
+  res.send('Successful Login. Welcome!');
 });
 
 app.listen(3000, () => {
