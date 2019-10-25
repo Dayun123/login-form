@@ -5,7 +5,16 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <h1>Login.html</h1>
+  <form action="/login" method="post">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" autocomplete="username">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" autocomplete="current-password">
+    </div>
+  </form>
   <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
