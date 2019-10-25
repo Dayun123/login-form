@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res, next) => {
-  res.send('Hello from Express!');
+app.get('/login', (req, res, next) => {
+  res.send('Login Page');
 });
 
 app.listen(3000, () => {
