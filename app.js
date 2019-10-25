@@ -3,8 +3,10 @@ const app = express();
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 app.get('/login', (req, res, next) => {
-  res.send('Login Page');
+  res.render('login');
 });
 
 app.listen(3000, () => {
