@@ -8,11 +8,14 @@
   <form action="/login" method="post">
     <div>
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" autocomplete="username">
+      <input type="text" id="username" name="username" autocomplete="username" required>
     </div>
     <div>
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" autocomplete="current-password">
+      <input type="password" id="password" name="password" autocomplete="current-password" required>
+    </div>
+    <div>
+      <button type="submit">Login</button>
     </div>
   </form>
   <script type="text/javascript" src="/js/main.js"></script>
