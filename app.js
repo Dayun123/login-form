@@ -7,14 +7,24 @@ app.use(express.urlencoded());
 app.set('view engine', 'ejs');
 
 app.get('/login', (req, res, next) => {
-  res.render('login');
+  
+  let errorMsg = '';
+
+  if (req.query.loginError) {
+    errorMsg = 'Invalid login credentials, please try again!';
+  }
+
+  res.render('login', {
+    errorMsg
+  });
+  
 });
 
 app.post('/login', (req, res, next) => {
   if (req.body.username === 'u' && req.body.password === 'p') {
     res.redirect('/welcome');
   } else {
-    res.redirect('/login');
+    res.redirect('/login?loginError=true');
   }
 });
 
