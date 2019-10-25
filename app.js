@@ -11,7 +11,11 @@ app.get('/login', (req, res, next) => {
 });
 
 app.post('/login', (req, res, next) => {
-  res.json(req.body);
+  if (req.body.username === 'u' && req.body.password === 'p') {
+    res.send('Successful Login');
+  } else {
+    res.send('Try again');
+  }
 });
 
 app.listen(3000, () => {
