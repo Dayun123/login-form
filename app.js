@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('public'));
+app.use(express.urlencoded());
 
 app.set('view engine', 'ejs');
 
@@ -10,8 +11,7 @@ app.get('/login', (req, res, next) => {
 });
 
 app.post('/login', (req, res, next) => {
-  console.log(req.body);
-  res.send('Posted form');
+  res.json(req.body);
 });
 
 app.listen(3000, () => {
